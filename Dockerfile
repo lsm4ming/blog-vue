@@ -1,6 +1,6 @@
 FROM nginx:latest
 
-MAINTAINER lsm1998
+LABEL lsm1998
 
 COPY dist/ /usr/share/nginx/html/
 COPY deploy/default.conf /etc/nginx/conf.d/default.conf
