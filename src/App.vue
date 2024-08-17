@@ -8,9 +8,7 @@ import { ElNotification } from "element-plus";
 import { storeToRefs } from "pinia";
 import { user, staticData } from "@/store/index.js";
 
-import MusicPlayer from "@/components/Music/index";
 import BackTop from "@/components/BackTop/index";
-import ChatRoom from "@/components/ChatRoom/index";
 
 const userStore = user();
 const router = useRouter();
@@ -83,8 +81,6 @@ onMounted(async () => {
       class="iconfont icon-fanhui"
       @click="goBack"
     ></i>
-    <MusicPlayer />
-    <ChatRoom :isPc="isPc" v-if="route.path !== '/'" />
   </div>
 </template>
 
