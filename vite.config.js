@@ -76,11 +76,12 @@ export default defineConfig({
       // 本地后端代理
       "/api": {
         //要访问的跨域的域名
-        target: "http://localhost:8888",
+        target: "https://blog-backend.lsm1998.com",
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
+    // },
   },
   // 打包输出
   build: {

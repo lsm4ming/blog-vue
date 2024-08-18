@@ -7,11 +7,10 @@ import { user } from "@/store/index";
 const http = axios.create({
   timeout: 10000, // 请求超时时间毫秒
   withCredentials: true, // 异步请求携带cookie
-  baseURL: "blog-backend.lsm1998.com", // 设置请求域名
+  baseURL: "https://blog-backend.lsm1998.com", // 设置请求域名
   headers: {
     // 设置后端需要的传参类型
     "Content-Type": "application/json",
-    "X-Requested-With": "XMLHttpRequest",
   },
 });
 
