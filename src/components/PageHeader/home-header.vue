@@ -14,7 +14,7 @@ const route = useRoute();
 const staticStore = staticData();
 const { getPageHeaderList } = storeToRefs(staticStore);
 
-const saying = ref(["且做等春树！"]);
+const saying = ref(["千里之行，始于足下。"]);
 const showScrollBottom = ref(true);
 
 gsap.registerPlugin(ScrollTrigger);
