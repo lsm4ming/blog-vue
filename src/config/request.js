@@ -7,7 +7,7 @@ import { user } from "@/store/index";
 const http = axios.create({
   timeout: 10000, // 请求超时时间毫秒
   withCredentials: true, // 异步请求携带cookie
-  baseURL: "https://blog-backend.lsm1998.com", // 设置请求域名
+  // baseURL: "https://blog-backend.lsm1998.com", // 设置请求域名
   // credentials: "include",
   headers: {
     // 设置后端需要的传参类型
@@ -58,7 +58,6 @@ http.interceptors.response.use(
     // 超出 2xx 范围的状态码都会触发该函数。
     // 对响应错误做点什么
     const { status, data } = error.response;
-
     switch (status + "") {
       case "401":
         // 403 表示用户未登录，或者token过期了

@@ -205,7 +205,7 @@ const publish = async (item) => {
       data.type = 3;
       break;
   }
-
+debugger
   const res = await applyComment(data);
   if (res.code == 0) {
     ElNotification({

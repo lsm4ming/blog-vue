@@ -64,21 +64,21 @@ export default defineConfig({
     },
   },
   server: {
-    port: 8080,
+    port: 8888,
     host: "0.0.0.0",
     https: false,
     open: true,
     // 热更新
     hmr: {
-      overlay: false,
+      overlay: true,
     },
+    base: "./",
     proxy: {
-      // 本地后端代理
       "/api": {
-        //要访问的跨域的域名
-        target: "https://blog-backend.lsm1998.com",
+        target: "http://127.0.0.1:10040",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
+        //rewrite: (path) => path.replace(/^\/api/, ""),
+        //logLevel: 'debug',
       },
     },
     // },
