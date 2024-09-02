@@ -96,6 +96,10 @@ onMounted(() => {
 onBeforeUnmount(() => {
   window.removeEventListener("scroll", scroll);
 });
+
+const toBlog = () => {
+  window.open("https://blog.lsm1998.com");
+};
 </script>
 
 <template>
@@ -107,8 +111,8 @@ onBeforeUnmount(() => {
   >
     <div class="pc_menu flex_r_between">
       <div class="sub-avatar">
-        <router-link v-if="getBlogAvatar" to="/"
-          ><el-avatar class="el-avatar" :src="getBlogAvatar" />
+        <router-link v-if="getBlogAvatar" to="/">
+          <el-avatar class="el-avatar" :src="getBlogAvatar" />
         </router-link>
         <MessageBox class="ml-[10px]" v-if="getUserInfo.id" :user-id="getUserInfo.id" type="pc" />
       </div>
@@ -130,41 +134,25 @@ onBeforeUnmount(() => {
               ><i class="iconfont icon-speechbubble"></i> 聊天室</el-menu-item
             > -->
             <el-menu-item index="/resources/front"
-              ><i class="iconfont icon-folder"></i> 前端推荐</el-menu-item
-            >
+              ><i class="iconfont icon-folder"></i> 前端推荐
+            </el-menu-item>
             <el-menu-item index="/resources/back"
-              ><i class="iconfont icon-houduankaifa"></i> 后端推荐</el-menu-item
-            >
+              ><i class="iconfont icon-houduankaifa"></i> 后端推荐
+            </el-menu-item>
             <!-- <el-menu-item index="/music"><i class="iconfont icon-bofangduilie"></i> 音乐</el-menu-item> -->
           </el-sub-menu>
-          <el-menu-item index="/category"><i class="iconfont icon-sort"></i> 分类</el-menu-item>
           <!-- <el-menu-item index="/tag"><i class="iconfont icon-label_fill"></i> 标签</el-menu-item> -->
-          <el-menu-item index="/photoAlbum"><i class="iconfont icon-paper"></i> 相册</el-menu-item>
-          <el-menu-item index="/talk"><i class="iconfont icon-speechbubble"></i> 说说</el-menu-item>
-          <el-menu-item index="/link/list"
-            ><i class="iconfont icon-pengyouquan"></i> 友链</el-menu-item
-          >
-          <el-menu-item index="/message/list"
-            ><i class="iconfont icon-liuyan"></i> 留言</el-menu-item
-          >
-          <el-menu-item index="/login" v-if="!getUserInfo.id"
-            ><i class="iconfont icon-timerauto"></i> 登录</el-menu-item
-          >
-          <div v-else class="user flex justify-center items-center">
-            <el-sub-menu index="/#">
-              <template #title
-                ><el-avatar :src="getUserInfo.avatar" :size="30">{{
-                  getUserInfo.nick_name
-                }}</el-avatar></template
-              >
-              <el-menu-item index="/userCenter"
-                ><i class="iconfont icon-gerenzhongxin"></i> 个人中心</el-menu-item
-              >
-              <el-menu-item index="/logout"
-                ><i class="iconfont icon-tuichudenglu"></i> 退出</el-menu-item
-              >
-            </el-sub-menu>
-          </div>
+<!--          <el-menu-item index="/photoAlbum"><i class="iconfont icon-paper"></i> 相册</el-menu-item>-->
+<!--          <el-menu-item index="/talk"><i class="iconfont icon-speechbubble"></i> 说说</el-menu-item>-->
+<!--          <el-menu-item index="/link/list"-->
+<!--            ><i class="iconfont icon-pengyouquan"></i> 友链-->
+<!--          </el-menu-item>-->
+<!--          <el-menu-item index="/message/list"-->
+<!--            ><i class="iconfont icon-liuyan"></i> 留言-->
+<!--          </el-menu-item>-->
+          <el-menu-item @click="toBlog"
+            ><i class="iconfont icon-timerauto"></i> 个人网站
+          </el-menu-item>
         </el-menu>
         <SwitchTheme />
       </div>
@@ -198,8 +186,8 @@ onBeforeUnmount(() => {
               :src="getUserInfo.avatar"
               :size="80"
               @click="toPersonal"
-              >{{ getUserInfo.nick_name }}</el-avatar
-            >
+              >{{ getUserInfo.nick_name }}
+            </el-avatar>
             <el-avatar v-else class="el-avatar" :size="80" @click="toLogin">去登录</el-avatar>
           </div>
           <el-menu
@@ -216,30 +204,30 @@ onBeforeUnmount(() => {
                 ><i class="iconfont icon-speechbubble"></i> 聊天室</el-menu-item
               > -->
               <el-menu-item index="/resources/front"
-                ><i class="iconfont icon-folder"></i> 前端推荐</el-menu-item
-              >
+                ><i class="iconfont icon-folder"></i> 前端推荐
+              </el-menu-item>
               <el-menu-item index="/resources/back"
-                ><i class="iconfont icon-houduankaifa"></i> 后端推荐</el-menu-item
-              >
+                ><i class="iconfont icon-houduankaifa"></i> 后端推荐
+              </el-menu-item>
             </el-sub-menu>
             <el-menu-item index="/category"><i class="iconfont icon-sort"></i> 分类</el-menu-item>
             <el-menu-item index="/tag"><i class="iconfont icon-label_fill"></i> 标签</el-menu-item>
             <el-menu-item index="/photoAlbum"
-              ><i class="iconfont icon-paper"></i> 相册</el-menu-item
-            >
+              ><i class="iconfont icon-paper"></i> 相册
+            </el-menu-item>
             <el-menu-item index="/talk"
-              ><i class="iconfont icon-speechbubble"></i> 说说</el-menu-item
-            >
+              ><i class="iconfont icon-speechbubble"></i> 说说
+            </el-menu-item>
             <el-menu-item index="/link/list"
-              ><i class="iconfont icon-pengyouquan"></i> 友链</el-menu-item
-            >
+              ><i class="iconfont icon-pengyouquan"></i> 友链
+            </el-menu-item>
 
             <el-menu-item index="/message/list"
-              ><i class="iconfont icon-liuyan"></i> 留言</el-menu-item
-            >
+              ><i class="iconfont icon-liuyan"></i> 留言
+            </el-menu-item>
             <el-menu-item v-if="getUserInfo.id" index="/logout"
-              ><i class="iconfont icon-tuichudenglu"></i> 退出</el-menu-item
-            >
+              ><i class="iconfont icon-tuichudenglu"></i> 退出
+            </el-menu-item>
             <!-- <el-sub-menu index="/menu">
               <template #title><i class="iconfont icon-menu21"></i> 菜单</template>
             </el-sub-menu> -->
@@ -301,6 +289,7 @@ onBeforeUnmount(() => {
 .icon-pengyouquan {
   font-size: 1.3rem;
 }
+
 .icon-timerauto {
   font-size: 1.1rem;
 }
