@@ -151,7 +151,7 @@ const toBlog = () => {
 <!--            ><i class="iconfont icon-liuyan"></i> 留言-->
 <!--          </el-menu-item>-->
           <el-menu-item @click="toBlog"
-            ><i class="iconfont icon-timerauto"></i> 个人网站
+            ><i class="iconfont icon-timerauto"></i> 个人博客
           </el-menu-item>
         </el-menu>
         <SwitchTheme />
